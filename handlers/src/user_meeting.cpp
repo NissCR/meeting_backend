@@ -128,8 +128,7 @@ public:
 		    into(meeting.published),
 		    range(0, 1);
 
-		while (!select.done()) {
-			select.execute();
+		while (!select.done() && select.execute()) {
 			meeting.id = id;
 			list.push_back(meeting);
 		}
